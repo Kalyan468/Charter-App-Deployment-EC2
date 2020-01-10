@@ -1,6 +1,7 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
-Description: Basic DigitalX S3 Bucket Template without any custom policies
+Description: Business Usecase- CF will use Packer AMI , provision EC2 and S3 buckets which are needed for application deployment 
+
 Parameters:
   LatestImageId:
     Description: EC2 instance type..Provide base AMI or Packer AMI reference
