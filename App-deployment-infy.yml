@@ -6,7 +6,7 @@ Parameters:
   LatestImageId:
     Description: EC2 instance type..Provide base AMI or Packer AMI reference
     Type : AWS::SSM::Parameter::Value<String>
-    Default: '/charter/tomcat-ami-id'
+    Default: '/charter/test/ami-id'
   IamInstanceProfile:
     Description:  IamInstanceProfile Name
     Type: String
