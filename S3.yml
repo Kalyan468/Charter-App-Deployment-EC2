@@ -1,0 +1,39 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Description: Basic DigitalX S3 Bucket Template without any custom policies
+Parameters:
+
+  BucketName:
+    Description: The Name and Tag to be given to the bucket. Should start with digitalx-
+    Type: String
+    Default: "charter-app"
+
+  Retention:
+    Description: The Retention to be given to the versions of each object on the bucket
+    Default: 30
+    Type: String
+
+   
+Resources:
+
+#Create Shared S3 Bucket
+  S3BucketTemplate:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      LifecycleConfiguration:
+        Rules:
+          - Id: !Ref BucketName
+            NoncurrentVersionExpirationInDays: !Ref Retention
+            Status: Enabled
+      Tags:
+        - Key: Name
+          Value: !Sub ${BucketName}-bucket
+        - Key: Resource
+          Value: 's3-bucket'
+
+Outputs:
+
+  S3BucketName:
+    Description: Output for the s3 bucket
+    Value: !Ref S3BucketTemplate
