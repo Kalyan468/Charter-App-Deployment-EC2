@@ -23,7 +23,7 @@ Parameters:
   AvailabilityZones:
     Description: EC2 Availability Zone
     Type: String
-    Default: us-east-1a
+    Default: us-east-1b
     AllowedValues:
       - us-east-1a
       - us-east-1b
