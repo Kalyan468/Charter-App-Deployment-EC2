@@ -4,9 +4,9 @@ Description: Basic DigitalX S3 Bucket Template without any custom policies
 Parameters:
 
   BucketName:
-    Description: The Name and Tag to be given to the bucket. Should start with digitalx-
+    Description: The Name and Tag to be given to the bucket.
     Type: String
-    Default: "charter-app"
+    Default: "charter-poc-deliverables"
 
   Retention:
     Description: The Retention to be given to the versions of each object on the bucket
